@@ -39,14 +39,15 @@ public class UserManager : MonoBehaviour
 
     #region HighScore Save/load
 
-    public class HighScore
+     class HighScore
     {
        public string playerName;
        public int score;
     }
-    public HighScore highScore;
+     HighScore highScore;
     public void Save(int score)
     {
+        if (score <= highScore.score) return;
         highScore.score = score;
         highScore.playerName = playerName;
         string json = JsonUtility.ToJson(highScore);
