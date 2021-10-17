@@ -6,6 +6,7 @@ using System.Collections.Generic;
 #region UNITY namespaces
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -15,9 +16,10 @@ using UnityEditor;
 
 public class MenuController : MonoBehaviour
 {
-
+    public Text playerName;
     public void StartNew()
     {
+        UserManager.Instance.SetName(playerName.text);
         SceneManager.LoadScene(1);
     }
 
