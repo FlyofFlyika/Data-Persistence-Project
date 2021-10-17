@@ -17,6 +17,12 @@ using UnityEditor;
 public class MenuController : MonoBehaviour
 {
     public Text playerName;
+    public Text HighScoreText;
+    private void Start()
+    {
+
+        UserManager.Instance.UpdateHighScore(HighScoreText);
+    }
     public void StartNew()
     {
         UserManager.Instance.SetName(playerName.text);
